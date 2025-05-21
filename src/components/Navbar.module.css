@@ -1,0 +1,47 @@
+/* src/components/Navbar.module.css */
+.navContainer {
+  display: grid;
+  grid-template-columns: 150px 1fr; /* Fixed logo width + flexible space */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 150px; /* Fixed width */
+  text-align: left; /* Keeps text aligned left */
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end; /* Aligns links to right */
+}
+
+.navItem {
+  font-size: 1.1rem;
+  width: 80px; /* Fixed width for each nav item */
+  text-align: center; /* Centers link text */
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  display: inline-block; /* Prevents text shifting */
+  width: 100%; /* Fills the container */
+}
+
+.link:hover {
+  color: #ccc;
+}
