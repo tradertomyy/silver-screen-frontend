@@ -1,12 +1,12 @@
 // vite.config.js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'  // Add this import
+import react from '@vitejs/plugin-react'  // Add this if using React
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react()],  // Include if using React
+  base: '/',
   build: {
-    rollupOptions: {
-      external: ['socket.io-client'], // Add this line
-    }
+    outDir: 'dist',
+    emptyOutDir: true
   }
 })
