@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { io } from 'socket.io-client';
+import { io } from 'socket.io-client/dist/socket.io.js';
 import Hls from 'hls.js';
 import { useParams, useNavigate } from 'react-router-dom';
 import { movies } from './data/movies'; // Import the movies data

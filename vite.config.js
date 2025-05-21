@@ -1,12 +1,25 @@
-// vite.config.js
-import { defineConfig } from 'vite'  // Add this import
-import react from '@vitejs/plugin-react'  // Add this if using React
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],  // Include if using React
+  plugins: [react()],
   base: '/',
   build: {
     outDir: 'dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    // Removed external: ['socket.io-client']
+  },
+  optimizeDeps: {
+    include: ['socket.io-client'],
+    exclude: ['hls.js']
+  },
+  server: {
+    proxy: {
+      '/socket.io': {
+        target: 'https://movie-socket-server.onrender.com',
+        changeOrigin: true,
+        ws: true
+      }
+    }
   }
-})
+});
